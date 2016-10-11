@@ -12,9 +12,9 @@ select.classList.add("class-1", "class-2")
 let option = document.createElement("option")
 option.setAttribute("value", someVar)
 if (someVar === selectedVar) {
-  node.setAttribute("selected", "selected")
+  option.setAttribute("selected", "selected")
 }
-node.textContent = `This is ${anotherVar}`
+option.textContent = `This is ${anotherVar}`
 ```
 
 Using `docrel`:
