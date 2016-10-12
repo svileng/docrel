@@ -1,11 +1,12 @@
-export function createElement(tag, options = {}) {
+export function createElement(tag, options = {}, children) {
   let result = document.createElement(tag)
 
+  result.textContent = options.textContent
   setAttributes(result, options.attrs)
   setClassList(result, options.classList)
   setEventListeners(result, options.events)
 
-  result.textContent = options.textContent
+  appendChildren(result, children)
 
   return result
 }
@@ -27,4 +28,8 @@ export function setEventListeners(el, events = {}) {
     let eventFn = events[eventName]
     el.addEventListener(eventName, eventFn)
   })
+}
+
+export function appendChildren(node, children = []) {
+  children.forEach(child => node.appendChild(child))
 }

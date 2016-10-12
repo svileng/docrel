@@ -7,16 +7,19 @@ exports.createElement = createElement;
 exports.setAttributes = setAttributes;
 exports.setClassList = setClassList;
 exports.setEventListeners = setEventListeners;
+exports.appendChildren = appendChildren;
 function createElement(tag) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var children = arguments[2];
 
   var result = document.createElement(tag);
 
+  result.textContent = options.textContent;
   setAttributes(result, options.attrs);
   setClassList(result, options.classList);
   setEventListeners(result, options.events);
 
-  result.textContent = options.textContent;
+  appendChildren(result, children);
 
   return result;
 }
@@ -45,5 +48,13 @@ function setEventListeners(el) {
   Object.keys(events).forEach(function (eventName) {
     var eventFn = events[eventName];
     el.addEventListener(eventName, eventFn);
+  });
+}
+
+function appendChildren(node) {
+  var children = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+
+  children.forEach(function (child) {
+    return node.appendChild(child);
   });
 }

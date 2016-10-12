@@ -1,4 +1,4 @@
-let {createElement, setAttributes, setClassList, setEventListeners} = require("../dist/docrel.js")
+let {createElement, setAttributes, setClassList, setEventListeners, appendChildren} = require("../dist/docrel.js")
 
 describe("docrel", () => {
 
@@ -18,7 +18,6 @@ describe("docrel", () => {
       var el = createElement("foo", {textContent: "yo"})
       expect(el.textContent).toBe("yo")
     })
-
   })
 
   describe("setAttributes", () => {
@@ -78,4 +77,24 @@ describe("docrel", () => {
       expect(this.node.addEventListener).not.toHaveBeenCalled()
     })
   })
+
+  describe("appendChildren", () => {
+    beforeEach(() => {
+      this.node = {
+        appendChild: jasmine.createSpy()
+      }
+    })
+
+    it("calls appendChild for every given child element", () => {
+      appendChildren(this.node, ["foo", "bar"])
+      expect(this.node.appendChild).toHaveBeenCalledWith("foo")
+      expect(this.node.appendChild).toHaveBeenCalledWith("bar")
+    })
+
+    it("does nothing when no params given", () => {
+      appendChildren(this.node, undefined)
+      expect(this.node.appendChild).not.toHaveBeenCalled()
+    })
+  })
+
 })
