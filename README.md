@@ -23,7 +23,7 @@ Using `docrel`:
 ```js
 import {createElement} from "docrel"
 
-let optionElement = createElement("option", {
+let option = createElement("option", {
   attrs: {
     value: someVar,
     selected: someVar === selectedVar ? "selected" : null
@@ -32,7 +32,7 @@ let optionElement = createElement("option", {
 })
 
 let select = createElement("select", {classList: ["foo", "bar"]}, [
-  optionElement
+  option
 ])
 ```
 
