@@ -11,15 +11,11 @@ option.setAttribute("value", someVar)
 if (someVar === selectedVar) {
   option.setAttribute("selected", "selected")
 }
-<<<<<<< Updated upstream
 option.textContent = `This is ${anotherVar}`
-=======
-node.textContent = `This is ${anotherVar}`
 
 let select = document.createElement("select")
 select.classList.add("foo", "bar")
 select.appendChild(option)
->>>>>>> Stashed changes
 ```
 
 Using `docrel`:
@@ -61,19 +57,14 @@ let el = createElement("div", {
   events: {
     click: () => {console.log("click!")}
   }
-}
+})
 ```
+
 - Keys inside `attrs` are passed to `node.setAttribute`, unless key value is `null` or `undefined`;
 - Keys inside `events` are passed to `node.addEventListener`;
 - Returns an HTML Element object.
 
-<<<<<<< Updated upstream
-## About
-<img src="http://heresy.io/public/logo.svg" width="300">
-
-This project is sponsored by [Heresy](https://heresy.io). We're making an innovative tool for enterprise sales and we're building a team of engineers here in London (UK) who love open source and JavaScript. If you would like to hear more, just get in touch via email: `team [at] heresy [dot] i/o`.
-=======
-The `createElement` supports a third parameter for appending child elements:
+The `createElement` function supports a third parameter for appending child elements:
 
 ```js
 let el = createElement("div", {classList: ["wrapper"]}, [
@@ -83,7 +74,11 @@ let el = createElement("div", {classList: ["wrapper"]}, [
 ```
 
 In addition to `createElement`, internal helper functions such as `appendChildren` and `setAttributes` are exported as well. See source for more info.
->>>>>>> Stashed changes
+
+## About
+<img src="http://heresy.io/public/logo.svg" width="300">
+
+This project is sponsored by [Heresy](https://heresy.io). We're making an innovative tool for enterprise sales and we're building a team of engineers here in London (UK) who love open source and JavaScript. If you would like to hear more, just get in touch via email: `team [at] heresy [dot] i/o`.
 
 ## Contributing
 Contributions are more than welcome. Please fork the repo and send a PR with a clean, rebased branch containing your changes. Also please make sure tests are passing and update tests if necessary.
@@ -95,4 +90,4 @@ To run the project locally, you will need to `npm install` dev dependencies and 
 
 ## License
 - docrel: [LICENSE](https://github.com/svileng/docrel/blob/master/LICENSE)
-- "Heresy" name and logo: copyright © 2016 Heresy Software Ltd
+- "Heresy" name and logo: Copyright © 2016 Heresy Software Ltd
