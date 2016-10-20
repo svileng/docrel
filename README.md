@@ -64,6 +64,8 @@ let el = createElement("div", {
 - Keys inside `events` are passed to `node.addEventListener`;
 - Returns an HTML Element object.
 
+### Nesting / appending children
+
 The `createElement` function supports a third parameter for appending child elements:
 
 ```js
