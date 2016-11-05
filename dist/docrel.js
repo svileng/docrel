@@ -3,11 +3,24 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.create = create;
 exports.createElement = createElement;
 exports.setAttributes = setAttributes;
 exports.setClassList = setClassList;
 exports.setEventListeners = setEventListeners;
 exports.appendChildren = appendChildren;
+function create() {
+  for (var _len = arguments.length, tags = Array(_len), _key = 0; _key < _len; _key++) {
+    tags[_key] = arguments[_key];
+  }
+
+  return tags.map(function (tag) {
+    return function (options, children) {
+      return createElement(tag, options, children);
+    };
+  });
+}
+
 function createElement(tag) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var children = arguments[2];

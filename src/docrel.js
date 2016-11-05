@@ -1,3 +1,9 @@
+export function create(...tags) {
+  return tags.map(tag => (options, children) => {
+    return createElement(tag, options, children)
+  })
+}
+
 export function createElement(tag, options = {}, children) {
   let result = document.createElement(tag)
 
