@@ -2,6 +2,10 @@ export function createElement(tag, options = {}, children) {
   let result = document.createElement(tag)
 
   result.textContent = options.textContent
+
+  if (options.id) result.id = options.id
+  if (options.class) result.className = options.class
+
   setAttributes(result, options.attrs)
   setClassList(result, options.classList)
   setEventListeners(result, options.events)

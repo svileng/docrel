@@ -18,6 +18,16 @@ describe("docrel", () => {
       var el = createElement("foo", {textContent: "yo"})
       expect(el.textContent).toBe("yo")
     })
+
+    it("sets id", () => {
+      var el = createElement("foo", {id: "yo"})
+      expect(el.id).toBe("yo")
+    })
+
+    it("sets className", () => {
+      var el = createElement("foo", {class: "yo sup"})
+      expect(el.className).toBe("yo sup")
+    })
   })
 
   describe("setAttributes", () => {

@@ -7,6 +7,7 @@ Using `document.createElement`:
 
 ```js
 let option = document.createElement("option")
+option.id = "random-id"
 option.setAttribute("value", someVar)
 if (someVar === selectedVar) {
   option.setAttribute("selected", "selected")
@@ -14,7 +15,7 @@ if (someVar === selectedVar) {
 option.textContent = `This is ${anotherVar}`
 
 let select = document.createElement("select")
-select.classList.add("foo", "bar")
+select.className = "foo bar"
 select.appendChild(option)
 ```
 
@@ -24,6 +25,7 @@ Using `docrel`:
 import {createElement} from "docrel"
 
 let option = createElement("option", {
+  id: "random-id",
   attrs: {
     value: someVar,
     selected: someVar === selectedVar ? "selected" : null
@@ -31,7 +33,7 @@ let option = createElement("option", {
   textContent: `This is ${anotherVar}`
 })
 
-let select = createElement("select", {classList: ["foo", "bar"]}, [
+let select = createElement("select", {class: "foo bar"}, [
   option
 ])
 ```
@@ -48,8 +50,9 @@ npm install docrel --save
 import {createElement} from "docrel"
 
 let el = createElement("div", {
-  textContent: "Text",
-  classList: ["array", "of", "classes"],
+  id: "el-id",
+  class: "class-a class-b",
+  textContent: "I'm an HTMLElement!",
   attrs: {
     align: "center",
     "data-attr": 1
@@ -60,6 +63,14 @@ let el = createElement("div", {
 })
 ```
 
+```html
+<!-- Resulting HTML when el is appended to the DOM -->
+<div id="el-id" class="class-a class-b" align="center" data-attr=1>
+  I'm an HTMLElement!
+</div>
+```
+
+- The `class` option is a shorthand to `node.className`;
 - Keys inside `attrs` are passed to `node.setAttribute`, unless key value is `null` or `undefined`;
 - Keys inside `events` are passed to `node.addEventListener`;
 - Returns an HTML Element object.
@@ -69,7 +80,7 @@ let el = createElement("div", {
 The `createElement` function supports a third parameter for appending child elements:
 
 ```js
-let el = createElement("div", {classList: ["wrapper"]}, [
+let el = createElement("div", {class: "wrapper"}, [
   createElement("input", {attrs: {type: "text"}}),
   createElement("button", {textContent: "Submit"})
 ])

@@ -15,6 +15,10 @@ function createElement(tag) {
   var result = document.createElement(tag);
 
   result.textContent = options.textContent;
+
+  if (options.id) result.id = options.id;
+  if (options.class) result.className = options.class;
+
   setAttributes(result, options.attrs);
   setClassList(result, options.classList);
   setEventListeners(result, options.events);
