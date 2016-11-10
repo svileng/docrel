@@ -6,39 +6,38 @@
 Using `document.createElement`:
 
 ```js
-let option = document.createElement("option")
-option.id = "random-id"
-option.setAttribute("value", someVar)
-if (someVar === selectedVar) {
-  option.setAttribute("selected", "selected")
-}
-option.textContent = `This is ${anotherVar}`
+let el = document.createElement("div")
+el.className = "wrapper"
 
-let select = document.createElement("select")
-select.className = "foo bar"
-select.appendChild(option)
+let input = document.createElement("input")
+input.setAttribute("type", "text")
+
+let button = document.createElement("button")
+button.textContent = "Submit"
+
+if (loading) {
+  button.setAttribute("disabled", "disabled")
+}
+
+el.appendChild(input)
+el.appendChild(button)
 ```
 
 Using `docrel`:
 
 ```js
-import {createElement} from "docrel"
+import {create} from "docrel"
+const [div, input, button] = create("div", "input", "button")
 
-let option = createElement("option", {
-  id: "random-id",
-  attrs: {
-    value: someVar,
-    selected: someVar === selectedVar ? "selected" : null
-  },
-  textContent: `This is ${anotherVar}`
-})
-
-let select = createElement("select", {class: "foo bar"}, [
-  option
+let el = div({class: "wrapper"}, [
+  input({attrs: {type: "text"}}),
+  button({textContent: "Submit", attrs: {
+    disabled: loading ? "disabled" : null
+  }})
 ])
 ```
 
-If `someVar === selectedVar` returns `null` the attribute won't be set at all.
+If `loading` returns `null` the attribute won't be set at all.
 
 ## Install
 ```bash
@@ -46,6 +45,7 @@ npm install docrel --save
 ```
 
 ## Usage
+Using `createElement`, similarly to `document.createElement`:
 ```js
 import {createElement} from "docrel"
 
@@ -69,6 +69,14 @@ let el = createElement("div", {
   I'm an HTMLElement!
 </div>
 ```
+Using the `create` function builder (uses `createElement` underneat):
+```js
+import {create} from "docrel"
+const [div] = create("div")
+
+let divOne = div({class: "div-a"})
+let divTwo = div({class: "div-b"})
+```
 
 - The `class` option is a shorthand to `node.className`;
 - Keys inside `attrs` are passed to `node.setAttribute`, unless key value is `null` or `undefined`;
@@ -77,16 +85,20 @@ let el = createElement("div", {
 
 ### Nesting / appending children
 
-The `createElement` function supports a third parameter for appending child elements:
+The `create`/`createElement` function supports a third parameter for appending child elements:
 
 ```js
-let el = createElement("div", {class: "wrapper"}, [
-  createElement("input", {attrs: {type: "text"}}),
-  createElement("button", {textContent: "Submit"})
+let el = div({class: "wrapper"}, [
+  div({class: "another-div"})
 ])
 ```
 
-In addition to `createElement`, internal helper functions such as `appendChildren` and `setAttributes` are exported as well. See source for more info.
+```html
+<!-- Resulting HTML when el is appended to the DOM -->
+<div class="wrapper">
+  <div class="another-div"></div>
+</div>
+```
 
 ## About
 <img src="http://heresy.io/public/logo.svg" width="300">

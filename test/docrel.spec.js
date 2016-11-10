@@ -1,6 +1,27 @@
-let {createElement, setAttributes, setClassList, setEventListeners, appendChildren} = require("../dist/docrel.js")
+let {
+  create,
+  createElement,
+  setAttributes,
+  setClassList,
+  setEventListeners,
+  appendChildren
+} = require("../dist/docrel.js")
 
 describe("docrel", () => {
+
+  describe("create", () => {
+    beforeEach(() => {
+      global.document = {
+        createElement: jasmine.createSpy().and.returnValue({})
+      }
+    })
+
+    it("calls createElement", () => {
+      const [div] = create("div")
+      div()
+      expect(global.document.createElement).toHaveBeenCalledWith("div")
+    })
+  })
 
   describe("createElement", () => {
     beforeEach(() => {
