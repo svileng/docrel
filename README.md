@@ -103,7 +103,7 @@ let el = div({class: "wrapper"}, [
 ## About
 <img src="http://heresy.io/public/logo.svg" width="300">
 
-This project is sponsored by [Heresy](https://heresy.io). We're making an innovative tool for enterprise sales and we're building a team of engineers here in London (UK) who love open source and JavaScript. If you would like to hear more, just get in touch via email: `team [at] heresy [dot] i/o`.
+This project is sponsored by [Heresy](http://heresy.io). We're making an innovative tool for enterprise sales and we're building a team of engineers here in London (UK) who love open source and JavaScript. If you would like to hear more, just get in touch via email: `team [at] heresy [dot] i/o`.
 
 ## Contributing
 Contributions are more than welcome. Please fork the repo and send a PR with a clean, rebased branch containing your changes. Also please make sure tests are passing and update tests if necessary.
