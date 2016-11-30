@@ -26,8 +26,7 @@ el.appendChild(button)
 Using `docrel`:
 
 ```js
-import {create} from "docrel"
-const [div, input, button] = create("div", "input", "button")
+import {div, input, button} from "docrel"
 
 let el = div({class: "wrapper"}, [
   input({attrs: {type: "text"}}),
@@ -73,6 +72,13 @@ Using the `create` function builder (uses `createElement` underneat):
 ```js
 import {create} from "docrel"
 const [div] = create("div")
+
+let divOne = div({class: "div-a"})
+let divTwo = div({class: "div-b"})
+```
+Or just importing the html elements directly:
+```js
+import {div} from "docrel"
 
 let divOne = div({class: "div-a"})
 let divTwo = div({class: "div-b"})

@@ -4,7 +4,8 @@ let {
   setAttributes,
   setClassList,
   setEventListeners,
-  appendChildren
+  appendChildren,
+  div
 } = require("../dist/docrel.js")
 
 describe("docrel", () => {
@@ -17,7 +18,20 @@ describe("docrel", () => {
     })
 
     it("calls createElement", () => {
-      const [div] = create("div")
+      const [span] = create("span")
+      span()
+      expect(global.document.createElement).toHaveBeenCalledWith("span")
+    })
+  })
+
+  describe("tag helpers", () => {
+    beforeEach(() => {
+      global.document = {
+        createElement: jasmine.createSpy().and.returnValue({})
+      }
+    })
+
+    it("calls createElement", () => {
       div()
       expect(global.document.createElement).toHaveBeenCalledWith("div")
     })
