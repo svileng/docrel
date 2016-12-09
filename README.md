@@ -117,7 +117,8 @@ Contributions are more than welcome. Please fork the repo and send a PR with a c
 To run the project locally, you will need to `npm install` dev dependencies and then use `npm run dev` and `npm test` to transpile ES2015 code and run tests, respectively (Node.js >= 6.0 or latest). See `package.json` for more info.
 
 ## Contributors
-- [@svileng](http://twitter.com/svileng)
+- [@svileng](https://twitter.com/svileng)
+- [@shennan](https://github.com/shennan)
 
 ## License
 - docrel: [LICENSE](https://github.com/svileng/docrel/blob/master/LICENSE)
