@@ -107,9 +107,9 @@ let el = div({class: "wrapper"}, [
 ```
 
 ## About
-<img src="http://heresy.io/public/logo.svg" width="300">
+<img src="https://app.heresy.io/images/logo-dark.svg" height="50px">
 
-This project is sponsored by [Heresy](http://heresy.io). We're making an innovative tool for enterprise sales and we're building a team of engineers here in London (UK) who love open source and JavaScript. If you would like to hear more, just get in touch via email: `team [at] heresy [dot] i/o`.
+This project is sponsored by [Heresy](http://heresy.io). We're always looking for great engineers to join our team, so if you love Elixir, open source and enjoy some challenge, drop us a line and say hello!
 
 ## Contributing
 Contributions are more than welcome. Please fork the repo and send a PR with a clean, rebased branch containing your changes. Also please make sure tests are passing and update tests if necessary.
