@@ -95,6 +95,7 @@ var h6 = exports.h6 = create("h6")[0];
 var header = exports.header = create("header")[0];
 var hr = exports.hr = create("hr")[0];
 var i = exports.i = create("i")[0];
+var iframe = exports.iframe = create("iframe")[0];
 var img = exports.img = create("img")[0];
 var input = exports.input = create("input")[0];
 var label = exports.label = create("label")[0];
