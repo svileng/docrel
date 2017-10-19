@@ -29,6 +29,7 @@ function createElement(tag) {
 
   result.textContent = options.textContent;
 
+  if (options.innerHTML) result.innerHTML = options.innerHTML;
   if (options.id) result.id = options.id;
   if (options.class) result.className = options.class;
 
