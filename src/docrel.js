@@ -7,8 +7,7 @@ export function create(...tags) {
 export function createElement(tag, options = {}, children) {
   let result = document.createElement(tag)
 
-  result.textContent = options.textContent
-
+  if (options.textContent) result.textContent = options.textContent
   if (options.innerHTML) result.innerHTML = options.innerHTML
   if (options.id) result.id = options.id
   if (options.class) result.className = options.class
@@ -75,6 +74,7 @@ export let meta = create("meta")[0]
 export let nav = create("nav")[0]
 export let ol = create("ol")[0]
 export let option = create("option")[0]
+export let p = create("p")[0]
 export let progress = create("progress")[0]
 export let script = create("script")[0]
 export let section = create("section")[0]

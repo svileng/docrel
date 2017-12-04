@@ -1,6 +1,6 @@
 {
   "name": "docrel",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Slightly better document.createElement",
   "main": "dist/docrel.js",
   "scripts": {

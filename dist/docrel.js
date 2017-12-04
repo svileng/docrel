@@ -27,8 +27,7 @@ function createElement(tag) {
 
   var result = document.createElement(tag);
 
-  result.textContent = options.textContent;
-
+  if (options.textContent) result.textContent = options.textContent;
   if (options.innerHTML) result.innerHTML = options.innerHTML;
   if (options.id) result.id = options.id;
   if (options.class) result.className = options.class;
@@ -107,6 +106,7 @@ var meta = exports.meta = create("meta")[0];
 var nav = exports.nav = create("nav")[0];
 var ol = exports.ol = create("ol")[0];
 var option = exports.option = create("option")[0];
+var p = exports.p = create("p")[0];
 var progress = exports.progress = create("progress")[0];
 var script = exports.script = create("script")[0];
 var section = exports.section = create("section")[0];
