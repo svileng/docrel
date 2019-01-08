@@ -84,6 +84,7 @@ var br = exports.br = create("br")[0];
 var button = exports.button = create("button")[0];
 var canvas = exports.canvas = create("canvas")[0];
 var div = exports.div = create("div")[0];
+var fieldset = exports.fieldset = create("fieldset")[0];
 var footer = exports.footer = create("footer")[0];
 var form = exports.form = create("form")[0];
 var h1 = exports.h1 = create("h1")[0];
