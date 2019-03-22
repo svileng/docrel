@@ -123,4 +123,4 @@ To run the project locally, you will need to `npm install` dev dependencies and 
 
 ## License
 - docrel: [LICENSE](https://github.com/svileng/docrel/blob/master/LICENSE)
-- "Heresy" name and logo: Copyright © 2016 Heresy Software Ltd
+- "Heresy" name and logo: Copyright © 2019 Heresy Software Ltd
