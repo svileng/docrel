@@ -106,12 +106,6 @@ let el = div({class: "wrapper"}, [
 </div>
 ```
 
-## About
-
-<img src="http://cdn.heresy.io/media/logo.png" height="50px">
-
-This project is sponsored by [Heresy](http://heresy.io). We're always looking for great engineers to join our team, so if you love Elixir, open source and enjoy some challenge, drop us a line and say hello!
-
 ## Contributing
 Contributions are more than welcome. Please fork the repo and send a PR with a clean, rebased branch containing your changes. Also please make sure tests are passing and update tests if necessary.
 
@@ -123,4 +117,3 @@ To run the project locally, you will need to `npm install` dev dependencies and 
 
 ## License
 - docrel: [LICENSE](https://github.com/svileng/docrel/blob/master/LICENSE)
-- "Heresy" name and logo: Copyright © 2019 Heresy Software Ltd
